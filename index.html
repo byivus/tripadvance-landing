@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TripAdvance — Модуль онлайн-бронирования для отелей | 0% комиссия</title>
+  <meta name="description" content="TripAdvance — профессиональный модуль онлайн-бронирования для отелей, санаториев и гостевых домов. Комиссия 0%, 100+ каналов продаж, интеграция с 1С, Битрикс24, Яндекс Путешествия. От 3500 ₽/мес.">
+  <meta name="keywords" content="модуль бронирования отель, онлайн бронирование для отеля, система бронирования санаторий, менеджер каналов, channel manager, 1С Отель, Яндекс Путешествия, бронирование без комиссии, TripAdvance">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tripadvance-booking.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tripadvance-booking.github.io/">
+  <meta property="og:title" content="TripAdvance — Модуль онлайн-бронирования для отелей">
+  <meta property="og:description" content="Профессиональный модуль бронирования с комиссией 0%. 100+ каналов продаж, интеграция с 1С, Битрикс24, Яндекс Путешествия. Для отелей, санаториев, гостевых домов.">
+  <meta property="og:image" content="https://tripadvance-booking.github.io/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="TripAdvance">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tripadvance-booking.github.io/">
+  <meta name="twitter:title" content="TripAdvance — Модуль онлайн-бронирования для отелей">
+  <meta name="twitter:description" content="Профессиональный модуль бронирования с комиссией 0%. 100+ каналов продаж, интеграция с 1С, Битрикс24, Яндекс Путешествия.">
+  <meta name="twitter:image" content="https://tripadvance-booking.github.io/og-image.png">
+
+  <!-- JSON-LD: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TripAdvance",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Модуль онлайн-бронирования для отелей, санаториев и гостевых домов. Комиссия 0%, 100+ каналов продаж.",
+    "url": "https://tripadvance-booking.github.io/",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "RUB",
+      "lowPrice": "3500",
+      "highPrice": "20000",
+      "offerCount": "8"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "ООО «ТРИП-АДВАНС»",
+      "url": "https://tripadvance.ru",
+      "telephone": "+78612132313",
+      "email": "acc@tripadvance.ru",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Анапа",
+        "addressCountry": "RU"
+      }
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как подключить модуль бронирования TripAdvance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Оставьте заявку или позвоните нам. Менеджер свяжется в течение рабочего дня, поможет выбрать тариф и настроить виджет под ваш сайт. Подключение занимает от 1 дня."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Действительно ли комиссия 0%?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, TripAdvance не берёт комиссию с броней. Вы платите только фиксированную ежемесячную подписку согласно выбранному тарифу — от 3500 ₽/мес."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие системы поддерживают интеграцию?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TripAdvance интегрируется с 1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ, а также поддерживает более 100 каналов продаж: Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и другие."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Есть ли скидки при оплате на длительный срок?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. При оплате на 3 месяца — скидка 5%, на 6 месяцев — 10%, на 12 месяцев — 15%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какая техническая поддержка предоставляется?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Мы обеспечиваем техническую поддержку по телефону +7 (861) 213-23-13 и email acc@tripadvance.ru. Команда помогает с настройкой, интеграцией и решением любых вопросов."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ========== CSS Reset & Variables ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --primary-light: #3B82F6;
+      --accent: #06B6D4;
+      --accent2: #8B5CF6;
+      --success: #10B981;
+      --bg: #ffffff;
+      --bg-secondary: #F8FAFC;
+      --bg-card: #ffffff;
+      --text: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --border: #E2E8F0;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,.08), 0 2px 4px -1px rgba(0,0,0,.04);
+      --shadow-lg: 0 20px 40px -8px rgba(37,99,235,.15);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0F172A;
+        --bg-secondary: #1E293B;
+        --bg-card: #1E293B;
+        --text: #F1F5F9;
+        --text-secondary: #94A3B8;
+        --text-muted: #64748B;
+        --border: #334155;
+        --shadow: 0 4px 6px -1px rgba(0,0,0,.4), 0 2px 4px -1px rgba(0,0,0,.2);
+        --shadow-lg: 0 20px 40px -8px rgba(37,99,235,.3);
+      }
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========== Typography ========== */
+    h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+
+    a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--primary-dark); }
+
+    /* ========== Layout ========== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-label {
+      display: inline-block;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(37,99,235,.1);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 56px;
+    }
+
+    .text-center { text-align: center; }
+
+    /* ========== Scroll Animations ========== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: .1s; }
+    .fade-in-delay-2 { transition-delay: .2s; }
+    .fade-in-delay-3 { transition-delay: .3s; }
+    .fade-in-delay-4 { transition-delay: .4s; }
+    .fade-in-delay-5 { transition-delay: .5s; }
+    .fade-in-delay-6 { transition-delay: .6s; }
+    .fade-in-delay-7 { transition-delay: .7s; }
+
+    /* ========== Buttons ========== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37,99,235,.4);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,99,235,.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 4px 14px rgba(0,0,0,.1);
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.15);
+      color: var(--primary-dark);
+    }
+
+    .btn-lg { padding: 18px 36px; font-size: 1.1rem; border-radius: 14px; }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 0;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      background: rgba(15,23,42,.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    @media (prefers-color-scheme: light) {
+      header.scrolled {
+        background: rgba(255,255,255,.95);
+        box-shadow: 0 1px 0 var(--border);
+      }
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,.8);
+      font-size: .95rem;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta .btn { padding: 10px 22px; font-size: .9rem; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 40%, #1D4ED8 75%, #2563EB 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 80% 50%, rgba(6,182,212,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(139,92,246,.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: .85rem;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      color: #fff;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,.85) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    .hero-highlight {
+      color: var(--accent);
+      -webkit-text-fill-color: var(--accent);
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: .85rem;
+      color: rgba(255,255,255,.6);
+      margin-top: 4px;
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .booking-widget-demo {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 30px 60px rgba(0,0,0,.3);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .widget-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .widget-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .widget-title {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .widget-sub {
+      color: rgba(255,255,255,.5);
+      font-size: .8rem;
+    }
+
+    .widget-row {
+      background: rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+
+    .widget-row-label {
+      font-size: .75rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 4px;
+    }
+
+    .widget-row-value {
+      color: #fff;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .widget-rooms {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .widget-room {
+      background: rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .widget-room-price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    .widget-room-name {
+      color: rgba(255,255,255,.6);
+      font-size: .75rem;
+      margin-top: 2px;
+    }
+
+    .widget-btn {
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .widget-commission {
+      text-align: center;
+      margin-top: 10px;
+      font-size: .8rem;
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    /* Floating badges on hero visual */
+    .hero-float-badge {
+      position: absolute;
+      background: rgba(255,255,255,.95);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: .8rem;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .hero-float-badge { background: rgba(30,41,59,.95); color: var(--text); }
+    }
+
+    .hero-float-1 { top: -20px; right: -30px; animation: float 5s ease-in-out infinite 1s; }
+    .hero-float-2 { bottom: 30px; left: -40px; animation: float 7s ease-in-out infinite 0.5s; }
+
+    .hero-visual-wrap {
+      position: relative;
+      padding: 20px 50px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero { text-align: center; }
+      .hero-actions, .hero-stats { justify-content: center; }
+      .hero-subtitle { margin: 0 auto 40px; }
+    }
+
+    /* ========== FEATURES ========== */
+    .features { background: var(--bg-secondary); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    /* Icon backgrounds */
+    .icon-blue { background: rgba(37,99,235,.12); }
+    .icon-cyan { background: rgba(6,182,212,.12); }
+    .icon-purple { background: rgba(139,92,246,.12); }
+    .icon-green { background: rgba(16,185,129,.12); }
+    .icon-orange { background: rgba(249,115,22,.12); }
+    .icon-pink { background: rgba(236,72,153,.12); }
+
+    /* ========== HOW IT WORKS ========== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: .3;
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 24px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 20px rgba(37,99,235,.3);
+    }
+
+    .step h3 { margin-bottom: 10px; font-size: 1.05rem; }
+    .step p { color: var(--text-secondary); font-size: .9rem; }
+
+    @media (max-width: 768px) {
+      .steps-grid::before { display: none; }
+    }
+
+    /* ========== INTEGRATIONS ========== */
+    .integrations { background: var(--bg-secondary); }
+
+    .integrations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .integration-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: default;
+    }
+
+    .integration-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .integration-logo {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .integration-name {
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--text);
+    }
+
+    .integration-type {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .channels-block {
+      margin-top: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 20px;
+      padding: 32px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .channels-count {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .channels-label {
+      font-size: 1.1rem;
+      opacity: .85;
+      margin-top: 6px;
+    }
+
+    .channels-logos {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .channel-pill {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    /* ========== PRICING ========== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card.popular {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37,99,235,.1), var(--shadow-lg);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .plan-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .plan-rooms {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .plan-price-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .plan-price-period {
+      font-size: .85rem;
+      color: var(--text-muted);
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .9rem;
+      color: var(--text-secondary);
+      padding: 5px 0;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    .plan-cta {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .pricing-discounts {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 32px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .discount-item {
+      text-align: center;
+    }
+
+    .discount-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--success);
+    }
+
+    .discount-label {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ========== FAQ ========== */
+    .faq { background: var(--bg-secondary); }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover { color: var(--primary); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(37,99,235,.1);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      transition: var(--transition);
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--primary); color: #fff; }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+    }
+
+    .faq-item.open .faq-answer { max-height: 200px; }
+
+    .faq-answer p {
+      padding: 0 0 20px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========== OTHER PRODUCTS ========== */
+    .other-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+
+    .product-icon {
+      font-size: 2.5rem;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .product-desc {
+      color: var(--text-secondary);
+      font-size: .95rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    /* ========== CONTACTS ========== */
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 16px; }
+
+    .contact-info p {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover { border-color: var(--primary); }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(37,99,235,.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-label {
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .contact-item-value {
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .contact-item-value a {
+      color: var(--text);
+    }
+    .contact-item-value a:hover { color: var(--primary); }
+
+    .contact-form {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .contact-form h3 { margin-bottom: 24px; }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-secondary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-card);
+      color: var(--text);
+      font-size: .95rem;
+      font-family: inherit;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit { width: 100%; justify-content: center; margin-top: 8px; }
+
+    @media (max-width: 768px) {
+      .contacts-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--accent) 100%);
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-section h2 { color: #fff; margin-bottom: 16px; }
+
+    .cta-section p {
+      color: rgba(255,255,255,.8);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section .btn-white { margin: 0 8px 12px; }
+    .cta-section .btn-outline { border-color: rgba(255,255,255,.5); color: #fff; margin: 0 8px 12px; }
+    .cta-section .btn-outline:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #0F172A;
+      color: rgba(255,255,255,.7);
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand .logo { margin-bottom: 16px; display: inline-flex; }
+    .footer-brand .logo { color: #fff; }
+
+    .footer-brand p {
+      font-size: .9rem;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-legal {
+      margin-top: 16px;
+      font-size: .8rem;
+      color: rgba(255,255,255,.4);
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,.6);
+      font-size: .9rem;
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .85rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 540px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========== Utilities ========== */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .divider-line {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo" aria-label="TripAdvance">
+        <div class="logo-icon">🏨</div>
+        TripAdvance
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#features">Преимущества</a></li>
+        <li><a href="#how">Как работает</a></li>
+        <li><a href="#integrations">Интеграции</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
+      </div>
+      <button class="hamburger" aria-label="Меню" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<main>
+<section class="hero" id="hero" aria-label="Главный экран">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <span>🚀</span>
+          <span>Модуль бронирования нового поколения</span>
+        </div>
+        <h1 class="fade-in fade-in-delay-1">
+          Модуль онлайн-бронирования<br>для отелей
+        </h1>
+        <p class="hero-subtitle fade-in fade-in-delay-2">
+          Принимайте брони напрямую с сайта с
+          <span class="hero-highlight">комиссией 0%</span>.
+          Подключайтесь к 100+ каналам продаж и управляйте всем в одном окне.
+        </p>
+        <div class="hero-actions fade-in fade-in-delay-3">
+          <a href="#contacts" class="btn btn-white btn-lg">Попробовать бесплатно</a>
+          <a href="#pricing" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:#fff;">Смотреть тарифы</a>
+        </div>
+        <div class="hero-stats fade-in fade-in-delay-4">
+          <div class="hero-stat">
+            <span class="hero-stat-value">0%</span>
+            <span class="hero-stat-label">Комиссия с броней</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">100+</span>
+            <span class="hero-stat-label">Каналов продаж</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">5+</span>
+            <span class="hero-stat-label">Интеграций</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">3 500 ₽</span>
+            <span class="hero-stat-label">От в месяц</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-in fade-in-delay-3">
+        <div class="hero-visual-wrap">
+          <div class="booking-widget-demo">
+            <div class="widget-header">
+              <div class="widget-icon">🏨</div>
+              <div>
+                <div class="widget-title">Бронирование онлайн</div>
+                <div class="widget-sub">Выберите номер и даты</div>
+              </div>
+            </div>
+            <div class="widget-row">
+              <div class="widget-row-label">📅 Заезд — Выезд</div>
+              <div class="widget-row-value">15 июля — 22 июля</div>
+            </div>
+            <div class="widget-row" style="margin-bottom:14px;">
+              <div class="widget-row-label">👥 Гостей</div>
+              <div class="widget-row-value">2 взрослых, 1 ребёнок</div>
+            </div>
+            <div class="widget-rooms">
+              <div class="widget-room">
+                <div class="widget-room-price">4 200 ₽/ночь</div>
+                <div class="widget-room-name">Стандарт</div>
+              </div>
+              <div class="widget-room" style="border:1px solid rgba(37,99,235,.4);">
+                <div class="widget-room-price">6 800 ₽/ночь</div>
+                <div class="widget-room-name">Люкс ★</div>
+              </div>
+            </div>
+            <button class="widget-btn">
+              🔐 Забронировать сейчас
+            </button>
+            <div class="widget-commission">✓ Комиссия 0% — платите только отелю</div>
+          </div>
+          <div class="hero-float-badge hero-float-1">
+            ✅ Новая бронь: Номер 215
+          </div>
+          <div class="hero-float-badge hero-float-2">
+            📊 +12 броней сегодня
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section class="features" id="features" aria-label="Преимущества">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Преимущества</span>
+      <h2 class="section-title fade-in">Всё, что нужно<br>для прямых броней</h2>
+      <p class="section-subtitle fade-in">Профессиональный инструмент для отелей, санаториев и гостевых домов любого размера</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon icon-green">💰</div>
+        <h3>Комиссия 0%</h3>
+        <p>Никакой комиссии с броней — ни с первой, ни с тысячной. Фиксированная подписка без скрытых платежей.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-1">
+        <div class="feature-icon icon-blue">🌐</div>
+        <h3>100+ каналов продаж</h3>
+        <p>Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и ещё сотни площадок. Всё синхронизируется автоматически.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-2">
+        <div class="feature-icon icon-purple">🔗</div>
+        <h3>Глубокие интеграции</h3>
+        <p>1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ. Данные синхронизируются в реальном времени.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-3">
+        <div class="feature-icon icon-cyan">📱</div>
+        <h3>Любые устройства</h3>
+        <p>Виджет бронирования адаптируется к любому экрану — смартфон, планшет, ПК. Гости бронируют удобно.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-4">
+        <div class="feature-icon icon-orange">📈</div>
+        <h3>Динамические цены</h3>
+        <p>Акции, скидки, специальные предложения. Управляйте ценообразованием гибко под любой сезон и спрос.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-5">
+        <div class="feature-icon icon-pink">🎨</div>
+        <h3>Уникальный дизайн</h3>
+        <p>Виджет стилизуется под ваш сайт. Гости не видят стороннего сервиса — они бронируют прямо у вас.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-6">
+        <div class="feature-icon icon-blue">💳</div>
+        <h3>Заселение в кредит</h3>
+        <p>Поддержка рассрочки и кредита при бронировании. Расширяйте аудиторию гостей.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-7">
+        <div class="feature-icon icon-green">📲</div>
+        <h3>Бронирование в соцсетях</h3>
+        <p>Принимайте брони прямо из ВКонтакте, Telegram и других соцсетей. Не теряйте клиентов на переходах.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-1">
+        <div class="feature-icon icon-purple">⭐</div>
+        <h3>Отзывы гостей</h3>
+        <p>Встроенная система сбора и публикации отзывов. Повышайте доверие и конверсию бронирования.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section id="how" aria-label="Как работает">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Как работает</span>
+      <h2 class="section-title fade-in">Запуск за 4 простых шага</h2>
+      <p class="section-subtitle fade-in">От первого звонка до приёма броней — минимум усилий с вашей стороны</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step fade-in">
+        <div class="step-num">1</div>
+        <h3>Подключение</h3>
+        <p>Оставьте заявку. Менеджер поможет выбрать тариф и подпишет договор. Никаких скрытых условий.</p>
+      </div>
+      <div class="step fade-in fade-in-delay-1">
+        <div class="step-num">2</div>
+        <h3>Настройка</h3>
+        <p>Вместе настраиваем виджет под дизайн вашего сайта, подключаем каналы и интеграции с вашими системами.</p>
+      </div>
+      <div class="step fade-in fade-in-delay-2">
+        <div class="step-num">3</div>
+        <h3>Приём броней</h3>
+        <p>Гости бронируют через ваш сайт и 100+ каналов. Все брони в одном месте, без дублирований.</p>
+      </div>
+      <div class="step fade-in fade-in-delay-3">
+        <div class="step-num">4</div>
+        <h3>Аналитика</h3>
+        <p>Смотрите статистику броней, загрузку, выручку и эффективность каналов в личном кабинете.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INTEGRATIONS ========== -->
+<section class="integrations" id="integrations" aria-label="Интеграции">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Интеграции</span>
+      <h2 class="section-title fade-in">Работает с вашими системами</h2>
+      <p class="section-subtitle fade-in">Подключается к популярным сервисам без написания кода и сложных настроек</p>
+    </div>
+    <div class="integrations-grid">
+      <div class="integration-card fade-in">
+        <span class="integration-logo">🏢</span>
+        <div class="integration-name">1С: Отель</div>
+        <div class="integration-type">PMS система</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-1">
+        <span class="integration-logo">✈️</span>
+        <div class="integration-name">Яндекс Путешествия</div>
+        <div class="integration-type">Канал продаж</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-2">
+        <span class="integration-logo">📊</span>
+        <div class="integration-name">Битрикс 24</div>
+        <div class="integration-type">CRM система</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-3">
+        <span class="integration-logo">🍽️</span>
+        <div class="integration-name">Iiko</div>
+        <div class="integration-type">Ресторан / F&amp;B</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-4">
+        <span class="integration-logo">🖨️</span>
+        <div class="integration-name">АТОЛ</div>
+        <div class="integration-type">Онлайн-касса</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-5">
+        <span class="integration-logo">🌍</span>
+        <div class="integration-name">WuBook</div>
+        <div class="integration-type">Channel Manager</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-6">
+        <span class="integration-logo">🏦</span>
+        <div class="integration-name">Сбербанк</div>
+        <div class="integration-type">Эквайринг</div>
+      </div>
+      <div class="integration-card fade-in fade-in-delay-7">
+        <span class="integration-logo">📡</span>
+        <div class="integration-name">API интеграция</div>
+        <div class="integration-type">Любые системы</div>
+      </div>
+    </div>
+
+    <div class="channels-block fade-in" style="margin-top:48px;">
+      <div>
+        <div class="channels-count">100+</div>
+        <div class="channels-label">каналов продаж подключено</div>
+      </div>
+      <div class="channels-logos">
+        <span class="channel-pill">Booking.com</span>
+        <span class="channel-pill">Expedia</span>
+        <span class="channel-pill">Airbnb</span>
+        <span class="channel-pill">Ostrovok</span>
+        <span class="channel-pill">Броневик</span>
+        <span class="channel-pill">101 Hotels</span>
+        <span class="channel-pill">+ ещё 94</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section id="pricing" aria-label="Тарифы">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Тарифы</span>
+      <h2 class="section-title fade-in">Прозрачные цены<br>для любого размера</h2>
+      <p class="section-subtitle fade-in">Платите только подписку. Без комиссии с броней, без скрытых платежей</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card fade-in">
+        <div class="plan-name">Микро</div>
+        <div class="plan-rooms">До 10 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">3 500 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>До 10 номеров</li>
+          <li>Комиссия 0%</li>
+          <li>Виджет бронирования</li>
+          <li>Базовые каналы</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card fade-in fade-in-delay-1">
+        <div class="plan-name">Соло</div>
+        <div class="plan-rooms">До 15 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">4 500 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>До 15 номеров</li>
+          <li>Комиссия 0%</li>
+          <li>Уникальный дизайн</li>
+          <li>До 20 каналов</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card fade-in fade-in-delay-2">
+        <div class="plan-name">Мини</div>
+        <div class="plan-rooms">До 25 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">5 500 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>До 25 номеров</li>
+          <li>Комиссия 0%</li>
+          <li>Динамические цены</li>
+          <li>До 50 каналов</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card fade-in fade-in-delay-3">
+        <div class="plan-name">Юнит</div>
+        <div class="plan-rooms">До 40 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">6 500 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>До 40 номеров</li>
+          <li>Комиссия 0%</li>
+          <li>Бронирование в соцсетях</li>
+          <li>До 70 каналов</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card fade-in fade-in-delay-1">
+        <div class="plan-name">Команда</div>
+        <div class="plan-rooms">До 50 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">8 000 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>До 50 номеров</li>
+          <li>Все каналы (100+)</li>
+          <li>Заселение в кредит</li>
+          <li>Приоритетная поддержка</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card popular fade-in fade-in-delay-2">
+        <div class="popular-badge">Популярный</div>
+        <div class="plan-name">Траст</div>
+        <div class="plan-rooms">50–150 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">10 500 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>50–150 номеров</li>
+          <li>Все каналы (100+)</li>
+          <li>Все интеграции</li>
+          <li>Отзывы гостей</li>
+          <li>Приоритетная поддержка</li>
+        </ul>
+        <a href="#contacts" class="btn btn-primary plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card fade-in fade-in-delay-3">
+        <div class="plan-name">Флагман</div>
+        <div class="plan-rooms">150–300 номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">12 500 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>150–300 номеров</li>
+          <li>Все возможности</li>
+          <li>Выделенный менеджер</li>
+          <li>SLA поддержка</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+
+      <div class="pricing-card fade-in fade-in-delay-4">
+        <div class="plan-name">Эдем</div>
+        <div class="plan-rooms">300+ номеров</div>
+        <div class="plan-price">
+          <span class="plan-price-value">20 000 ₽</span>
+          <span class="plan-price-period">/мес</span>
+        </div>
+        <ul class="plan-features">
+          <li>Без ограничений</li>
+          <li>Все возможности</li>
+          <li>Персональная поддержка</li>
+          <li>Индивидуальные доработки</li>
+        </ul>
+        <a href="#contacts" class="btn btn-outline plan-cta">Оставить заявку</a>
+      </div>
+    </div>
+
+    <div class="pricing-discounts fade-in">
+      <div class="discount-item">
+        <div class="discount-value">−5%</div>
+        <div class="discount-label">при оплате на 3 месяца</div>
+      </div>
+      <div class="discount-item">
+        <div class="discount-value">−10%</div>
+        <div class="discount-label">при оплате на 6 месяцев</div>
+      </div>
+      <div class="discount-item">
+        <div class="discount-value">−15%</div>
+        <div class="discount-label">при оплате на 12 месяцев</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq" id="faq" aria-label="Часто задаваемые вопросы">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title fade-in">Частые вопросы</h2>
+      <p class="section-subtitle fade-in">Если не нашли ответ — звоните, мы поможем разобраться</p>
+    </div>
+
+    <div class="faq-list fade-in" role="list">
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Как подключить модуль бронирования TripAdvance?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Оставьте заявку или позвоните нам по номеру +7 (861) 213-23-13. Менеджер свяжется в течение рабочего дня, поможет выбрать подходящий тариф и организует настройку виджета под ваш сайт. Весь процесс занимает от 1 до 3 рабочих дней.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Действительно ли комиссия 0%?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Да, абсолютно. TripAdvance не берёт комиссию ни с одной брони — ни с первой, ни с тысячной. Вы платите только фиксированную ежемесячную подписку согласно выбранному тарифу. Это принципиальное отличие от OTA-платформ, которые берут 15–25%.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Какие системы поддерживает интеграция?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>TripAdvance интегрируется с 1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ. Через менеджеры каналов подключаем Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и ещё 90+ площадок. Если вам нужна специфическая интеграция — обсуждаем индивидуально.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Есть ли скидки при длительной оплате?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Да. При оплате на 3 месяца вперёд — скидка 5%, на 6 месяцев — 10%, на 12 месяцев — 15%. Скидки суммируются автоматически при оформлении подписки.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Какая техническая поддержка включена?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Техническая поддержка включена во все тарифы. Связаться можно по телефону +7 (861) 213-23-13 и email acc@tripadvance.ru. В тарифах Флагман и Эдем — выделенный менеджер и приоритетное SLA. Мы помогаем с настройкой, интеграциями и любыми вопросами в процессе работы.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OTHER PRODUCTS ========== -->
+<section id="other-products" aria-label="Другие продукты">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Другие продукты</span>
+      <h2 class="section-title fade-in">Экосистема TripAdvance</h2>
+      <p class="section-subtitle fade-in">Дополнительные инструменты для автоматизации и роста вашего отеля</p>
+    </div>
+    <div class="other-products-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon">🤖</div>
+        <div class="product-title">Hotel Pricing Bot</div>
+        <p class="product-desc">
+          Telegram-бот для расчёта стоимости номеров с учётом сезонности, загрузки и конкурентов.
+          Помогает выстроить динамическое ценообразование и не терять выручку в высокий сезон.
+        </p>
+        <a href="https://hotelpricingbot.com" target="_blank" rel="noopener" class="btn btn-outline">Узнать подробнее →</a>
+      </div>
+      <div class="product-card fade-in fade-in-delay-1">
+        <div class="product-icon">🏗️</div>
+        <div class="product-title">TASolution — Автоматизация 1С</div>
+        <p class="product-desc">
+          Комплексная автоматизация отелей на базе 1С: Отель. Внедрение, сопровождение, интеграции.
+          Полный цикл от настройки до обучения персонала.
+        </p>
+        <a href="https://tasolution.ru" target="_blank" rel="noopener" class="btn btn-outline">Посетить сайт →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section" aria-label="Призыв к действию">
+  <div class="container">
+    <h2 class="fade-in">Готовы принимать прямые брони?</h2>
+    <p class="fade-in">Оставьте заявку — мы свяжемся, ответим на вопросы и настроим всё под ваш отель</p>
+    <div class="fade-in">
+      <a href="#contacts" class="btn btn-white btn-lg">Оставить заявку</a>
+      <a href="tel:+78612132313" class="btn btn-outline btn-lg">Позвонить</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACTS ========== -->
+<section id="contacts" aria-label="Контакты">
+  <div class="container">
+    <div class="contacts-grid">
+      <div class="contact-info">
+        <span class="section-label">Контакты</span>
+        <h2>Свяжитесь с нами</h2>
+        <p>Ответим на вопросы, поможем выбрать тариф и настроим демо-доступ для вашего отеля</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <div class="contact-item-label">Телефон</div>
+              <div class="contact-item-value">
+                <a href="tel:+78612132313">+7 (861) 213-23-13</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">
+                <a href="mailto:acc@tripadvance.ru">acc@tripadvance.ru</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🌐</div>
+            <div>
+              <div class="contact-item-label">Сайты</div>
+              <div class="contact-item-value">
+                <a href="https://tripadvance.ru" target="_blank" rel="noopener">tripadvance.ru</a>
+                &nbsp;·&nbsp;
+                <a href="https://tasolution.ru" target="_blank" rel="noopener">tasolution.ru</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Адрес</div>
+              <div class="contact-item-value">Анапа, Краснодарский край</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-in">
+        <h3>Оставить заявку</h3>
+        <form onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Иван Петров" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@hotel.ru" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="rooms">Количество номеров</label>
+            <select id="rooms" name="rooms">
+              <option value="">Выберите...</option>
+              <option value="micro">До 10 номеров (Микро)</option>
+              <option value="solo">До 15 номеров (Соло)</option>
+              <option value="mini">До 25 номеров (Мини)</option>
+              <option value="unit">До 40 номеров (Юнит)</option>
+              <option value="team">До 50 номеров (Команда)</option>
+              <option value="trust">50–150 номеров (Траст)</option>
+              <option value="flagship">150–300 номеров (Флагман)</option>
+              <option value="eden">300+ номеров (Эдем)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Комментарий (необязательно)</label>
+            <textarea id="message" name="message" placeholder="Расскажите о вашем объекте или задайте вопрос"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg form-submit">
+            Отправить заявку →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <div class="logo-icon">🏨</div>
+          TripAdvance
+        </a>
+        <p>Модуль онлайн-бронирования для отелей, санаториев и гостевых домов. Комиссия 0%, 100+ каналов продаж.</p>
+        <div class="footer-legal">
+          ООО «ТРИП-АДВАНС»<br>
+          ИНН: уточняется · ОГРН: уточняется<br>
+          353440, Россия, Краснодарский край, г. Анапа
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Продукт</h4>
+        <ul class="footer-links">
+          <li><a href="#features">Преимущества</a></li>
+          <li><a href="#how">Как работает</a></li>
+          <li><a href="#integrations">Интеграции</a></li>
+          <li><a href="#pricing">Тарифы</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Сервисы</h4>
+        <ul class="footer-links">
+          <li><a href="https://tripadvance.ru" target="_blank" rel="noopener">tripadvance.ru</a></li>
+          <li><a href="https://tasolution.ru" target="_blank" rel="noopener">tasolution.ru</a></li>
+          <li><a href="https://hotelpricingbot.com" target="_blank" rel="noopener">hotelpricingbot.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+78612132313">+7 (861) 213-23-13</a></li>
+          <li><a href="mailto:acc@tripadvance.ru">acc@tripadvance.ru</a></li>
+          <li><a href="#contacts">Оставить заявку</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 ООО «ТРИП-АДВАНС». Все права защищены.</span>
+      <span>Сделано в Анапе 🌊</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ========== Header scroll ==========
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ========== IntersectionObserver animations ==========
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ========== FAQ toggle ==========
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    // Open clicked if was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // ========== Mobile menu ==========
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const navCta = document.querySelector('.nav-cta');
+    const isOpen = navLinks.style.display === 'flex';
+
+    if (isOpen) {
+      navLinks.style.display = '';
+      navCta.style.display = '';
+    } else {
+      navLinks.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:80px;left:0;right:0;background:rgba(15,23,42,.97);padding:24px;gap:16px;z-index:99;backdrop-filter:blur(12px);';
+      navCta.style.cssText = 'display:block;position:fixed;bottom:24px;left:24px;right:24px;z-index:100;';
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.style.color = '#fff';
+        a.style.fontSize = '1.1rem';
+        a.onclick = () => {
+          navLinks.style.display = '';
+          navCta.style.display = '';
+        };
+      });
+    }
+  }
+
+  // ========== Form submit ==========
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('[type=submit]');
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!name || !phone) {
+      alert('Пожалуйста, заполните имя и телефон');
+      return;
+    }
+
+    btn.textContent = '✓ Заявка отправлена!';
+    btn.style.background = 'var(--success)';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.textContent = 'Отправить заявку →';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+</script>
+</body>
+</html>
