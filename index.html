@@ -118,6 +118,85 @@
   }
   </script>
 
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TripAdvance",
+    "alternateName": "ТрипАдванс",
+    "url": "https://tabooking.ru",
+    "logo": "https://tabooking.ru/android-chrome-512x512.png",
+    "description": "Модуль онлайн-бронирования для отелей, санаториев и гостевых домов с комиссией 0%",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+7-861-213-23-13",
+      "contactType": "sales",
+      "availableLanguage": "Russian",
+      "email": "acc@tripadvance.ru"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Анапа",
+      "addressRegion": "Краснодарский край",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://tripadvance.ru",
+      "https://tasolution.ru"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Как подключить модуль бронирования TripAdvance",
+    "description": "Подключение модуля онлайн-бронирования TripAdvance за 4 шага",
+    "totalTime": "P3D",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Подключение",
+        "text": "Оставьте заявку на сайте или позвоните +7 (861) 213-23-13. Менеджер поможет выбрать тариф и подпишет договор."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Настройка",
+        "text": "Настраиваем виджет под дизайн вашего сайта, подключаем каналы продаж и интеграции."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Приём броней",
+        "text": "Гости бронируют через ваш сайт и 100+ каналов. Все брони в одном месте без дублей."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Аналитика",
+        "text": "Статистика броней, загрузка номеров, выручка и эффективность каналов в личном кабинете."
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TripAdvance",
+    "url": "https://tabooking.ru",
+    "description": "Модуль онлайн-бронирования для отелей с комиссией 0%",
+    "inLanguage": "ru-RU"
+  }
+  </script>
+
   <style>
     /* ========== CSS Reset & Variables ========== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -214,8 +293,14 @@
     /* ========== Scroll Animations ========== */
     .fade-in {
       opacity: 1;
-      transform: translateY(30px);
-      transition: opacity .6s ease, transform .6s ease;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { animation: fadeInUp 0.6s ease-out; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .fade-in.visible {
       opacity: 1;
@@ -1271,6 +1356,14 @@
   </style>
 </head>
 <body>
+
+<noscript>
+  <div style="padding: 40px; text-align: center; font-family: sans-serif;">
+    <h1>TripAdvance — Модуль онлайн-бронирования для отелей</h1>
+    <p>Принимайте брони напрямую с сайта с комиссией 0%. 100+ каналов продаж. От 3 500 ₽/мес.</p>
+    <p>Телефон: +7 (861) 213-23-13 | Email: acc@tripadvance.ru</p>
+  </div>
+</noscript>
 
 <!-- ========== HEADER ========== -->
 <header id="header">
