@@ -113,6 +113,46 @@
           "@type": "Answer",
           "text": "Мы обеспечиваем техническую поддержку по телефону +7 (861) 213-23-13 и email acc@tripadvance.ru. Команда помогает с настройкой, интеграцией и решением любых вопросов."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Сколько стоит подключение TripAdvance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Подключение бесплатное. Вы платите только ежемесячную подписку от 3 500 ₽/мес в зависимости от количества номеров. Никаких разовых платежей за настройку."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как быстро можно начать принимать брони?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "От заявки до приёма первой брони — 1-3 рабочих дня. Менеджер помогает с настройкой виджета и подключением каналов."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Работает ли TripAdvance с 1С:Отель?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, TripAdvance имеет глубокую интеграцию с 1С:Отель. Данные о бронях, гостях и оплатах синхронизируются в реальном времени. Также поддерживаются 1С:СПА, 1С:Фитнес и другие конфигурации."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли подключить TripAdvance к существующему сайту?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, виджет бронирования встраивается в любой сайт — достаточно добавить одну строку кода. Виджет автоматически адаптируется под дизайн вашего сайта."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Чем TripAdvance отличается от Booking.com?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TripAdvance — это ваш собственный модуль бронирования с комиссией 0%. Booking.com берёт 15-25% с каждой брони. С TripAdvance вы контролируете цены, получаете полные данные о гостях и бронирования идут напрямую в вашу систему управления."
+        }
       }
     ]
   }
@@ -435,26 +475,57 @@
 
     .nav-cta .btn { padding: 10px 22px; font-size: .9rem; }
 
-    .hamburger {
+    .burger-btn {
       display: none;
       flex-direction: column;
       gap: 5px;
+      background: none;
+      border: none;
       cursor: pointer;
-      padding: 4px;
+      padding: 8px;
+      z-index: 1001;
     }
-    .hamburger span {
-      display: block;
+    .burger-btn span {
       width: 24px;
       height: 2px;
-      background: #fff;
+      background: white;
+      transition: 0.3s;
       border-radius: 2px;
-      transition: var(--transition);
     }
 
     @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      .burger-btn { display: flex; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100vh;
+        background: rgba(15, 15, 40, 0.97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        z-index: 1000;
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { font-size: 20px; }
     }
+
+    /* ========== SKIP LINK ========== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #684FFF;
+      color: white;
+      padding: 8px 16px;
+      z-index: 10000;
+      transition: top 0.3s;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .skip-link:focus { top: 0; }
 
     /* ========== HERO ========== */
     .hero {
@@ -1357,6 +1428,8 @@
 </head>
 <body>
 
+<a href="#hero" class="skip-link">Перейти к содержимому</a>
+
 <noscript>
   <div style="padding: 40px; text-align: center; font-family: sans-serif;">
     <h1>TripAdvance — Модуль онлайн-бронирования для отелей</h1>
@@ -1371,7 +1444,7 @@
     <nav class="nav">
       <a href="/" class="logo" aria-label="Trip-Advance">
         <div class="logo-icon">
-          <img src="assets/logo-full-white.svg" alt="Trip-Advance" loading="eager">
+          <img src="/assets/logo-full-white.svg" alt="TripAdvance — модуль бронирования для отелей" width="160" height="56" loading="eager">
         </div>
       </a>
       <ul class="nav-links" role="list">
@@ -1385,7 +1458,7 @@
       <div class="nav-cta">
         <a href="#contacts" class="btn btn-primary">Оставить заявку</a>
       </div>
-      <button class="hamburger" aria-label="Меню" onclick="toggleMenu()">
+      <button class="burger-btn" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -1409,6 +1482,13 @@
           Принимайте брони напрямую с сайта с
           <span class="hero-highlight">комиссией 0%</span>.
           Подключайтесь к 100+ каналам продаж и управляйте всем в одном окне.
+        </p>
+        <p class="hero-definition fade-in fade-in-delay-2" style="font-size:15px;opacity:0.8;max-width:640px;margin:16px auto 0;">
+          TripAdvance — профессиональный модуль онлайн-бронирования для отелей,
+          санаториев и гостевых домов. Принимайте прямые бронирования через сайт
+          с комиссией 0%, подключайте 100+ каналов продаж (Booking.com, Expedia,
+          Airbnb, Ostrovok) и интегрируйтесь с 1С:Отель, Битрикс24,
+          Яндекс Путешествия. Стоимость от 3 500 ₽/мес без скрытых платежей.
         </p>
         <div class="hero-actions fade-in fade-in-delay-3">
           <a href="#contacts" class="btn btn-white btn-lg">Попробовать бесплатно</a>
@@ -1639,6 +1719,49 @@
   </div>
 </section>
 
+<!-- ========== FOR WHOM ========== -->
+<section id="for-whom" aria-label="Для кого подходит">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">ДЛЯ КОГО</span>
+      <h2 class="section-title fade-in">Для любого типа размещения</h2>
+      <p class="section-subtitle fade-in">TripAdvance подходит объектам любого размера — от мини-отеля до сетевой гостиницы</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon blue">🏨</div>
+        <h3>Отели и гостиницы</h3>
+        <p>От мини-отелей на 10 номеров до сетевых на 300+. Полная автоматизация бронирований.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-1">
+        <div class="feature-icon cyan">🏥</div>
+        <h3>Санатории и пансионаты</h3>
+        <p>Учёт специфики лечебных программ, длительного проживания и сезонности.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-2">
+        <div class="feature-icon green">🏡</div>
+        <h3>Гостевые дома и апартаменты</h3>
+        <p>Простое подключение без технических знаний. Управление из одного окна.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-3">
+        <div class="feature-icon orange">🏖️</div>
+        <h3>Базы отдыха и кемпинги</h3>
+        <p>Сезонное ценообразование, гибкие тарифы, бронирование домиков и участков.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-4">
+        <div class="feature-icon purple">🏢</div>
+        <h3>Хостелы</h3>
+        <p>Управление местами и номерами. Интеграция с каналами бюджетного сегмента.</p>
+      </div>
+      <div class="feature-card fade-in fade-in-delay-5">
+        <div class="feature-icon pink">🏔️</div>
+        <h3>Глэмпинги и эко-отели</h3>
+        <p>Уникальный виджет под стиль объекта. Бронирование нестандартных типов размещения.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== PRICING ========== -->
 <section id="pricing" aria-label="Тарифы">
   <div class="container">
@@ -1797,6 +1920,37 @@
   </div>
 </section>
 
+<!-- ========== COMPARISON ========== -->
+<section id="comparison" aria-label="Сравнение с OTA">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">СРАВНЕНИЕ</span>
+      <h2 class="section-title fade-in">TripAdvance vs OTA-платформы</h2>
+      <p class="section-subtitle fade-in">Почему прямые бронирования выгоднее Booking.com и Expedia</p>
+    </div>
+    <div class="table-wrap" style="overflow-x:auto;margin-top:32px;">
+      <table style="width:100%;border-collapse:collapse;font-size:.95rem;">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:14px 16px;background:var(--bg-secondary);border-bottom:2px solid var(--border);">Параметр</th>
+            <th style="padding:14px 16px;background:var(--primary);color:#fff;border-bottom:2px solid var(--primary);">TripAdvance</th>
+            <th style="padding:14px 16px;background:var(--bg-secondary);border-bottom:2px solid var(--border);color:var(--text-secondary);">Booking.com / OTA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:13px 16px;border-bottom:1px solid var(--border);">Комиссия с бронирования</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--primary);font-weight:700;">0%</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);">15–25%</td></tr>
+          <tr style="background:var(--bg-secondary)"><td style="padding:13px 16px;border-bottom:1px solid var(--border);">Данные о гостях</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--primary);font-weight:600;">Полный доступ</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);">Ограниченный</td></tr>
+          <tr><td style="padding:13px 16px;border-bottom:1px solid var(--border);">Брендирование</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--primary);font-weight:600;">Ваш стиль и домен</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);">Страница OTA</td></tr>
+          <tr style="background:var(--bg-secondary)"><td style="padding:13px 16px;border-bottom:1px solid var(--border);">Ценообразование</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--primary);font-weight:600;">Полный контроль</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);">Ограничения паритета</td></tr>
+          <tr><td style="padding:13px 16px;border-bottom:1px solid var(--border);">Интеграция с 1С</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--primary);font-weight:600;">Да, в реальном времени</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);">Нет</td></tr>
+          <tr style="background:var(--bg-secondary)"><td style="padding:13px 16px;border-bottom:1px solid var(--border);">Стоимость</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--primary);font-weight:600;">Фикс. от 3 500 ₽/мес</td><td style="padding:13px 16px;border-bottom:1px solid var(--border);text-align:center;color:var(--text-secondary);">% от каждой брони</td></tr>
+          <tr><td style="padding:13px 16px;">Повторные бронирования</td><td style="padding:13px 16px;text-align:center;color:var(--primary);font-weight:600;">Прямой контакт с гостем</td><td style="padding:13px 16px;text-align:center;color:var(--text-secondary);">Гость остаётся у OTA</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- ========== FAQ ========== -->
 <section class="faq" id="faq" aria-label="Часто задаваемые вопросы">
   <div class="container">
@@ -1854,6 +2008,51 @@
         </button>
         <div class="faq-answer" role="region">
           <p>Техническая поддержка включена во все тарифы. Связаться можно по телефону +7 (861) 213-23-13 и email acc@tripadvance.ru. В тарифах Флагман и Эдем — выделенный менеджер и приоритетное SLA. Мы помогаем с настройкой, интеграциями и любыми вопросами в процессе работы.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Сколько стоит подключение TripAdvance?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Подключение бесплатное. Вы платите только ежемесячную подписку от 3 500 ₽/мес в зависимости от количества номеров. Никаких разовых платежей за настройку.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Как быстро можно начать принимать брони?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>От заявки до приёма первой брони — 1-3 рабочих дня. Менеджер помогает с настройкой виджета и подключением каналов.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Работает ли TripAdvance с 1С:Отель?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Да, TripAdvance имеет глубокую интеграцию с 1С:Отель. Данные о бронях, гостях и оплатах синхронизируются в реальном времени. Также поддерживаются 1С:СПА, 1С:Фитнес и другие конфигурации.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Можно ли подключить TripAdvance к существующему сайту?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Да, виджет бронирования встраивается в любой сайт — достаточно добавить одну строку кода. Виджет автоматически адаптируется под дизайн вашего сайта.</p>
+        </div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          Чем TripAdvance отличается от Booking.com?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>TripAdvance — это ваш собственный модуль бронирования с комиссией 0%. Booking.com берёт 15-25% с каждой брони. С TripAdvance вы контролируете цены, получаете полные данные о гостях и бронирования идут напрямую в вашу систему управления.</p>
         </div>
       </div>
     </div>
@@ -2001,7 +2200,7 @@
       <div class="footer-brand">
         <a href="/" class="logo">
           <div class="logo-icon">
-            <img src="assets/logo-full-white.svg" alt="Trip-Advance" loading="lazy">
+            <img src="/assets/logo-full-white.svg" alt="TripAdvance — модуль бронирования для отелей" width="160" height="56" loading="lazy">
           </div>
         </a>
         <p>Модуль онлайн-бронирования для отелей, санаториев и гостевых домов. Комиссия 0%, 100+ каналов продаж.</p>
@@ -2086,26 +2285,19 @@
   }
 
   // ========== Mobile menu ==========
-  function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const navCta = document.querySelector('.nav-cta');
-    const isOpen = navLinks.style.display === 'flex';
-
-    if (isOpen) {
-      navLinks.style.display = '';
-      navCta.style.display = '';
-    } else {
-      navLinks.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:80px;left:0;right:0;background:rgba(15,23,42,.97);padding:24px;gap:16px;z-index:99;backdrop-filter:blur(12px);';
-      navCta.style.cssText = 'display:block;position:fixed;bottom:24px;left:24px;right:24px;z-index:100;';
-      navLinks.querySelectorAll('a').forEach(a => {
-        a.style.color = '#fff';
-        a.style.fontSize = '1.1rem';
-        a.onclick = () => {
-          navLinks.style.display = '';
-          navCta.style.display = '';
-        };
+  const burger = document.querySelector('.burger-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      burger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
       });
-    }
+    });
   }
 
   // ========== Form submit ==========
