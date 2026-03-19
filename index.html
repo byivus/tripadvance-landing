@@ -2333,11 +2333,7 @@
       return;
     }
 
-    const hcaptchaToken = form.querySelector('[name="h-captcha-response"]')?.value;
-    if (!hcaptchaToken) {
-      alert('Пожалуйста, подтвердите что вы не робот');
-      return;
-    }
+    const hcaptchaToken = form.querySelector('[name="h-captcha-response"]')?.value || '';
 
     btn.textContent = 'Отправляем...';
     btn.disabled = true;
@@ -2373,7 +2369,10 @@
         body: JSON.stringify(data),
       });
 
-      if (res.ok) {
+      const result = await res.json();
+      console.log('Web3Forms response:', result);
+
+      if (res.ok && result.success) {
         btn.textContent = '✓ Заявка отправлена!';
         btn.style.background = 'var(--success)';
         form.reset();
@@ -2383,13 +2382,11 @@
           btn.disabled = false;
         }, 5000);
       } else {
-        throw new Error('server error');
+        throw new Error(result.message || 'server error');
       }
-    } catch {
-      // Fallback: открываем mailto
-      const subject = encodeURIComponent('Заявка с сайта Trip-Advance');
-      const body = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${data.email}\nНомеров: ${data.rooms}\nКомментарий: ${data.message}`);
-      window.location.href = `mailto:acc@tripadvance.ru?subject=${subject}&body=${body}`;
+    } catch (err) {
+      console.error('Form error:', err);
+      alert('Ошибка отправки: ' + err.message + '\nПозвоните нам: +7 (861) 213-23-13');
       btn.textContent = 'Отправить заявку →';
       btn.style.background = '';
       btn.disabled = false;
