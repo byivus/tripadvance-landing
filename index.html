@@ -65,7 +65,7 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Как подключить модуль бронирования TripAdvance?",
+        "name": "Как подключить модуль бронирования Trip-Advance?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Оставьте заявку или позвоните нам. Менеджер свяжется в течение рабочего дня, поможет выбрать тариф и настроить виджет под ваш сайт. Подключение занимает от 1 дня."
@@ -76,7 +76,7 @@
         "name": "Действительно ли комиссия 0%?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Да, TripAdvance не берёт комиссию с броней. Вы платите только фиксированную ежемесячную подписку согласно выбранному тарифу — от 3500 ₽/мес."
+          "text": "Да, Trip-Advance не берёт комиссию с броней. Вы платите только фиксированную ежемесячную подписку согласно выбранному тарифу — от 3500 ₽/мес."
         }
       },
       {
@@ -84,7 +84,7 @@
         "name": "Какие системы поддерживают интеграцию?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "TripAdvance интегрируется с 1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ, а также поддерживает более 100 каналов продаж: Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и другие."
+          "text": "Trip-Advance интегрируется с 1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ, а также поддерживает более 100 каналов продаж: Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и другие."
         }
       },
       {
@@ -312,14 +312,15 @@
     }
 
     .logo-icon {
-      width: 36px;
       height: 36px;
-      background: var(--primary);
-      border-radius: 8px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
+    }
+
+    .logo-icon img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -1264,9 +1265,8 @@
 <header id="header">
   <div class="container">
     <nav class="nav">
-      <a href="/" class="logo" aria-label="TripAdvance">
-        <div class="logo-icon">🏨</div>
-        TripAdvance
+      <a href="/" class="logo" aria-label="Trip-Advance">
+        <div class="logo-icon"><img src="https://tripadvance.ru/wp-content/uploads/2021/04/cropped-logo-regular-N-1.png" alt="Trip-Advance" loading="eager"></div>
       </a>
       <ul class="nav-links" role="list">
         <li><a href="#features">Преимущества</a></li>
@@ -1703,7 +1703,7 @@
     <div class="faq-list fade-in" role="list">
       <div class="faq-item" role="listitem">
         <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-          Как подключить модуль бронирования TripAdvance?
+          Как подключить модуль бронирования Trip-Advance?
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer" role="region">
@@ -1717,7 +1717,7 @@
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer" role="region">
-          <p>Да, абсолютно. TripAdvance не берёт комиссию ни с одной брони — ни с первой, ни с тысячной. Вы платите только фиксированную ежемесячную подписку согласно выбранному тарифу. Это принципиальное отличие от OTA-платформ, которые берут 15–25%.</p>
+          <p>Да, абсолютно. Trip-Advance не берёт комиссию ни с одной брони — ни с первой, ни с тысячной. Вы платите только фиксированную ежемесячную подписку согласно выбранному тарифу. Это принципиальное отличие от OTA-платформ, которые берут 15–25%.</p>
         </div>
       </div>
 
@@ -1727,7 +1727,7 @@
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer" role="region">
-          <p>TripAdvance интегрируется с 1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ. Через менеджеры каналов подключаем Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и ещё 90+ площадок. Если вам нужна специфическая интеграция — обсуждаем индивидуально.</p>
+          <p>Trip-Advance интегрируется с 1С: Отель, Яндекс Путешествия, Битрикс 24, Iiko, АТОЛ. Через менеджеры каналов подключаем Booking.com, Expedia, Airbnb, Ostrovok, Броневик, 101 Hotels и ещё 90+ площадок. Если вам нужна специфическая интеграция — обсуждаем индивидуально.</p>
         </div>
       </div>
 
@@ -1894,14 +1894,13 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo">
-          <div class="logo-icon">🏨</div>
-          TripAdvance
+          <div class="logo-icon"><img src="https://tripadvance.ru/wp-content/uploads/2021/04/cropped-logo-regular-N-1.png" alt="Trip-Advance" loading="lazy"></div>
         </a>
         <p>Модуль онлайн-бронирования для отелей, санаториев и гостевых домов. Комиссия 0%, 100+ каналов продаж.</p>
         <div class="footer-legal">
           ООО «ТРИП-АДВАНС»<br>
-          ИНН: уточняется · ОГРН: уточняется<br>
-          353440, Россия, Краснодарский край, г. Анапа
+          ИНН 2301105561<br>
+          353435, Краснодарский край, г-к Анапа, х. Усатова Балка, ул. Красная, д. 1/9, кв. 3
         </div>
       </div>
 
@@ -2002,9 +2001,10 @@
   }
 
   // ========== Form submit ==========
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('[type=submit]');
+    const form = e.target;
+    const btn = form.querySelector('[type=submit]');
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
 
@@ -2013,16 +2013,45 @@
       return;
     }
 
-    btn.textContent = '✓ Заявка отправлена!';
-    btn.style.background = 'var(--success)';
+    btn.textContent = 'Отправляем...';
     btn.disabled = true;
 
-    setTimeout(() => {
+    const data = {
+      name,
+      phone,
+      email: document.getElementById('email').value.trim(),
+      rooms: document.getElementById('rooms').value,
+      message: document.getElementById('message').value.trim(),
+    };
+
+    try {
+      const res = await fetch('https://formspree.io/f/xpwrlwkn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        btn.textContent = '✓ Заявка отправлена!';
+        btn.style.background = 'var(--success)';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = 'Отправить заявку →';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 5000);
+      } else {
+        throw new Error('server error');
+      }
+    } catch {
+      // Fallback: открываем mailto
+      const subject = encodeURIComponent('Заявка с сайта Trip-Advance');
+      const body = encodeURIComponent(`Имя: ${name}\nТелефон: ${phone}\nEmail: ${data.email}\nНомеров: ${data.rooms}\nКомментарий: ${data.message}`);
+      window.location.href = `mailto:acc@tripadvance.ru?subject=${subject}&body=${body}`;
       btn.textContent = 'Отправить заявку →';
       btn.style.background = '';
       btn.disabled = false;
-      e.target.reset();
-    }, 4000);
+    }
   }
 </script>
 </body>
