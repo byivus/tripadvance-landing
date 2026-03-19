@@ -2355,7 +2355,9 @@
     const roomsVal = document.getElementById('rooms').value;
 
     const data = {
-      _subject: `Новая заявка с tabooking.ru — ${name}`,
+      access_key: 'a2920bb2-e79f-4687-9982-39ba30c1e85c',
+      subject: `Новая заявка с tabooking.ru — ${name}`,
+      from_name: 'tabooking.ru',
       Имя: name,
       Телефон: phone,
       Email: document.getElementById('email').value.trim(),
@@ -2365,7 +2367,7 @@
     };
 
     try {
-      const res = await fetch('https://formspree.io/f/mreyjpwy', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data),
