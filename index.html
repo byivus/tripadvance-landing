@@ -2342,12 +2342,24 @@
     btn.textContent = 'Отправляем...';
     btn.disabled = true;
 
+    const roomsMap = {
+      micro: 'До 10 номеров (Микро)',
+      solo: 'До 15 номеров (Соло)',
+      mini: 'До 25 номеров (Мини)',
+      unit: 'До 40 номеров (Юнит)',
+      team: 'До 50 номеров (Команда)',
+      trust: '50–150 номеров (Траст)',
+      flagship: '150–300 номеров (Флагман)',
+      eden: '300+ номеров (Эдем)',
+    };
+    const roomsVal = document.getElementById('rooms').value;
+
     const data = {
-      name,
-      phone,
-      email: document.getElementById('email').value.trim(),
-      rooms: document.getElementById('rooms').value,
-      message: document.getElementById('message').value.trim(),
+      Имя: name,
+      Телефон: phone,
+      Email: document.getElementById('email').value.trim(),
+      'Количество номеров': roomsMap[roomsVal] || roomsVal || 'Не указано',
+      Комментарий: document.getElementById('message').value.trim(),
       'h-captcha-response': hcaptchaToken,
     };
 
