@@ -336,15 +336,21 @@
       transform: translateY(0);
     }
     @media (prefers-reduced-motion: no-preference) {
-      .fade-in { animation: fadeInUp 0.6s ease-out; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      .fade-in:not(.visible) {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .fade-in {
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
     }
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    .hero-definition {
+      color: rgba(255, 255, 255, 0.7);
+      opacity: 0.8;
     }
     .fade-in-delay-1 { transition-delay: .1s; }
     .fade-in-delay-2 { transition-delay: .2s; }
@@ -1484,7 +1490,7 @@
           <span class="hero-highlight">комиссией 0%</span>.
           Подключайтесь к 100+ каналам продаж и управляйте всем в одном окне.
         </p>
-        <p class="hero-definition fade-in fade-in-delay-2" style="font-size:15px;opacity:0.8;max-width:640px;margin:16px auto 0;">
+        <p class="hero-definition" style="font-size:15px;max-width:640px;margin:16px auto 0;">
           TripAdvance — профессиональный модуль онлайн-бронирования для отелей,
           санаториев и гостевых домов. Принимайте прямые бронирования через сайт
           с комиссией 0%, подключайте 100+ каналов продаж (Booking.com, Expedia,
@@ -1768,7 +1774,7 @@
   <div class="container">
     <div class="text-center">
       <span class="section-label">Тарифы</span>
-      <h2 class="section-title fade-in">Прозрачные цены<br>для любого размера</h2>
+      <h2 class="section-title fade-in">Прозрачные цены для любого размера</h2>
       <p class="section-subtitle fade-in">Платите только подписку. Без комиссии с броней, без скрытых платежей</p>
     </div>
 
