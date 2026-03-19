@@ -2263,6 +2263,16 @@
   }, { passive: true });
 
   // ========== IntersectionObserver animations ==========
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  // Сразу делаем видимыми элементы в текущем viewport
+  fadeEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    }
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -2270,9 +2280,11 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+  }, { threshold: 0.05 });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  fadeEls.forEach(el => {
+    if (!el.classList.contains('visible')) observer.observe(el);
+  });
 
   // ========== FAQ toggle ==========
   function toggleFaq(btn) {
