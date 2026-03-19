@@ -9,6 +9,7 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   <meta name="theme-color" content="#684FFF">
   <title>TripAdvance — Модуль онлайн-бронирования для отелей | 0% комиссия</title>
   <meta name="description" content="TripAdvance — профессиональный модуль онлайн-бронирования для отелей, санаториев и гостевых домов. Комиссия 0%, 100+ каналов продаж, интеграция с 1С, Битрикс24, Яндекс Путешествия. От 3500 ₽/мес.">
@@ -2188,6 +2189,7 @@
             <label for="message">Комментарий (необязательно)</label>
             <textarea id="message" name="message" placeholder="Расскажите о вашем объекте или задайте вопрос"></textarea>
           </div>
+          <div class="h-captcha" data-sitekey="c7da1142-5984-4112-8cf6-2ea4b672077c" style="margin-bottom:16px;"></div>
           <button type="submit" class="btn btn-primary btn-lg form-submit">
             Отправить заявку →
           </button>
@@ -2331,6 +2333,12 @@
       return;
     }
 
+    const hcaptchaToken = form.querySelector('[name="h-captcha-response"]')?.value;
+    if (!hcaptchaToken) {
+      alert('Пожалуйста, подтвердите что вы не робот');
+      return;
+    }
+
     btn.textContent = 'Отправляем...';
     btn.disabled = true;
 
@@ -2340,6 +2348,7 @@
       email: document.getElementById('email').value.trim(),
       rooms: document.getElementById('rooms').value,
       message: document.getElementById('message').value.trim(),
+      'h-captcha-response': hcaptchaToken,
     };
 
     try {
