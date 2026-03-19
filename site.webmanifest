@@ -1,20 +1,20 @@
 {
-  "name": "TripAdvance — Модуль бронирования для отелей",
-  "short_name": "TripAdvance",
+  "name": "Trip-Advance — Модуль бронирования для отелей",
+  "short_name": "Trip-Advance",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/assets/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/assets/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "theme_color": "#684FFF",
-  "background_color": "#0f0f28",
+  "theme_color": "#2563EB",
+  "background_color": "#0F172A",
   "display": "standalone",
   "start_url": "/",
   "description": "Модуль онлайн-бронирования для отелей с комиссией 0%"
